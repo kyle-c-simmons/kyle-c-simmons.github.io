@@ -10,4 +10,4 @@ CTF write ups including OverTheWire and various challenges.
 [OverTheWire: Bandit]
 
 
-[OverTheWire: Bandit]: https://github.com/jekyll
+[OverTheWire: Bandit]: https://kyle-c-simmons.github.io/overthewire/ctf/2019/04/06/OverTheWire-Bandit.html

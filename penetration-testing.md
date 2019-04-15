@@ -14,6 +14,6 @@ Penetration testing write ups of vulnerable machines.
 <br>
 [Kioptrix Level 3 - Walthrough]
 
-[Kioptrix Level 1 - Walthrough]: https://github.com/jekyll
-[Kioptrix Level 2 - Walthrough]: https://github.com/jekyll
-[Kioptrix Level 3 - Walthrough]: https://github.com/jekyll
+[Kioptrix Level 1 - Walthrough]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/2019/04/09/Kioptrix-level1.html
+[Kioptrix Level 2 - Walthrough]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/2019/04/10/Kioptrix-level2.html
+[Kioptrix Level 3 - Walthrough]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/2019/04/14/Kioptrix-level3.html
