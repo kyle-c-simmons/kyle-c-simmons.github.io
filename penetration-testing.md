@@ -13,6 +13,8 @@ Penetration testing write ups of vulnerable machines.
 [Kioptrix Level 2 - Writeup]
 <br>
 [Kioptrix Level 3 - Writeup]
+<br>
+[Kioptrix Level 4 - Writeup]
 
 [Kioptrix Level 1 - Writeup]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/Kioptrix-level1/
 [Kioptrix Level 2 - Writeup]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/Kioptrix-level2/

@@ -85,8 +85,8 @@ An attempt is made to perform a dictonary attack over SSH against these username
 but that did not work. After that an attempt is made to login with the users enumerated
 on the login page. The 'john' user shows the password in plaintext! With a password of
 'MyNameIsJohn'.
-<br>
-Since SSH is open a login attempt with SSH using the credientals collected is done
+<br><br>
+Since SSH is open, a login attempt with SSH using the credentials collected is done
 which is successful! However, the shell appears to be low privileged with few commands.
 <br><br>
 <img src="/assets/images/Kioptrix/kioptrix4-ssh-lowprivuser.png">
