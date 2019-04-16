@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Kioptrix Level 4 Walkthrough"
+title:  "Kioptrix Level 4 Writeup"
 date:   2019-04-16 11:00:02 +0530
 author: Kyle Simmons
 categories: [vulnhub, vulnerable-machine]
@@ -26,24 +26,6 @@ PORT    STATE SERVICE     VERSION
 |_http-title: Site doesn't have a title (text/html).
 139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
 445/tcp open  netbios-ssn Samba smbd 3.0.28a (workgroup: WORKGROUP)
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-
-Host script results
-|_clock-skew: mean: 1h59m59s, deviation: 2h49m42s, median: 0s
-nbstat: NetBIOS name: KIOPTRIX4, NetBIOS user: (unknown), NetBIOS MAC: (unknown)
-| smb-os-discovery:
-|   OS: Unix (Samba 3.0.28a)
-|   Computer name: Kioptrix4
-|   NetBIOS computer name:
-|   Domain name: localdomain
-|   FQDN: Kioptrix4.localdomain
-|_  System time: 2019-04-15T15:34:29-04:00
-| smb-security-mode:
-|   account_used: guest
-|   authentication_level: user
-|   challenge_response: supported
-|_  message_signing: disabled (dangerous, but default)
-|_smb2-time: Protocol negotiation failed (SMB2)
 {% endhighlight %}
 <br>
 

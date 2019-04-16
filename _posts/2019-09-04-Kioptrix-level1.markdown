@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Kioptrix Level 1 Walkthrough"
+title:  "Kioptrix Level 1 Writeup"
 date:   2019-04-09 15:44:02 +0530
 author: Kyle Simmons
 categories: [vulnhub, vulnerable-machine]
