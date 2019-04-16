@@ -1,18 +1,47 @@
 ---
-layout: post
+layout: posts
 title:  "Kioptrix Level 4 Writeup"
 date:   2019-04-16 11:00:02 +0530
 author: Kyle Simmons
 categories: [vulnhub, vulnerable-machine]
 ---
+The goal is to get root access and retrieve the flag in the 'root' directory.
+
 Kioptrix level 4 vulnhub link below: <br>
 [Kioptrix Level 4 download page]
 <br><br>
-The goal is to get root access and retrieve the flag in the 'root' directory.
 <h2>1.1 Enumeration</h2>
 A port scan reveals that 4 ports are open (22, 80, 139 and 445).
 {% highlight shell %}
-update port scan
+nmap -T4 -sV -A -oA nmap-scan 192.168.0.73
+Nmap scan report for 192.168.0.73
+Host is up (0.00027s latency).
+Not shown: 566 closed ports, 430 filtered ports
+PORT    STATE SERVICE     VERSION
+22/tcp  open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1.2 (protocol 2.0)
+80/tcp  open  http        Apache httpd 2.2.8 ((Ubuntu) PHP/5.2.4-2ubuntu5.6 with Suhosin-Patch)
+|_http-server-header: Apache/2.2.8 (Ubuntu) PHP/5.2.4-2ubuntu5.6 with Suhosin-Patch
+|_http-title: Site doesnt have a title (text/html).
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp open  netbios-ssn Samba smbd 3.0.28a (workgroup: WORKGROUP)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+|_clock-skew: mean: 1h59m59s, deviation: 2h49m42s, median: 0s
+|_nbstat: NetBIOS name: KIOPTRIX4, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| smb-os-discovery:
+|   OS: Unix (Samba 3.0.28a)
+|   Computer name: Kioptrix4
+|   NetBIOS computer name:
+|   Domain name: localdomain
+|   FQDN: Kioptrix4.localdomain
+|_  System time: 2019-04-15T15:34:29-04:00
+| smb-security-mode:
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_smb2-time: Protocol negotiation failed (SMB2)
 {% endhighlight %}
 <br>
 

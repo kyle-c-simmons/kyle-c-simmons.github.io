@@ -1,11 +1,12 @@
 ---
-layout: post
+layout: posts
 title:  "Kioptrix Level 1 Writeup"
 date:   2019-04-09 15:44:02 +0530
 author: Kyle Simmons
 categories: [vulnhub, vulnerable-machine]
 ---
-Kioptrix level 1 is an easy vulnerable machine on vulnhub, link is below:<br>
+Kioptrix level 1 is an easy vulnerable machine on vulnhub.
+
 [Kioptrix Level 1 download page]
 <br>
 <h2>1. Enumeration</h2>

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title:  "OverTheWire: Bandit Walkthrough"
 date:   2019-04-06 22:01:43 +0530
 author: Kyle Simmons

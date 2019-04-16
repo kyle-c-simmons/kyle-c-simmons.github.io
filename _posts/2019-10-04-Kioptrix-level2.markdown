@@ -1,14 +1,16 @@
 ---
-layout: post
+layout: posts
 title:  "Kioptrix Level 2 Writeup"
 date:   2019-04-10 13:00:02 +0530
 author: Kyle Simmons
 categories: [vulnhub, vulnerable-machine]
 ---
+Kioptrix level 2 contains several vulnerabilities including a OS command injection, privilege escalation and
+SQL Injection vulnerabilities.
+
 Kioptrix level 2 vulnhub link below: <br>
 [Kioptrix Level 2 download page]
 <br><br>
-
 
 <h2>1. Enumeration</h2>
 The first plan is starting with a port scan to see what services are running.
