@@ -2,6 +2,7 @@
 layout: post
 title:  "Kioptrix Level 2 Walkthrough"
 date:   2019-04-10 13:00:02 +0530
+author: Kyle Simmons
 categories: [vulnhub, vulnerable-machine]
 ---
 Kioptrix level 2 vulnhub link below: <br>

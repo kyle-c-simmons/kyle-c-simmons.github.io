@@ -2,6 +2,7 @@
 layout: post
 title:  "OverTheWire: Bandit Walkthrough"
 date:   2019-04-06 22:01:43 +0530
+author: Kyle Simmons
 categories: [OverTheWire, CTF]
 ---
 OverTheWire Bandit - The challenges are a great way of practicing Linux commands. There are 34 challenges in total to complete. Each challenge give you the password to the next one and so on.

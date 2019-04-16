@@ -2,6 +2,7 @@
 layout: post
 title:  "Kioptrix Level 3 Walkthrough"
 date:   2019-04-14 21:28:02 +0530
+author: Kyle Simmons
 categories: [vulnhub, vulnerable-machine]
 ---
 Kioptrix level 3 vulnhub link below: <br>
