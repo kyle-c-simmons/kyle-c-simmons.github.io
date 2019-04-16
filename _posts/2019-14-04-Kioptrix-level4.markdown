@@ -12,16 +12,7 @@ The goal is to get root access and retrieve the flag in the 'root' directory.
 <h2>1.1 Enumeration</h2>
 A port scan reveals that 4 ports are open (22, 80, 139 and 445).
 {% highlight shell %}
-nmap -T4 -sV -A -oA nmap-scan 192.168.0.73
-Nmap scan report for 192.168.0.73
-Host is up (0.00027s latency).
-Not shown: 566 closed ports, 430 filtered ports
-PORT    STATE SERVICE     VERSION
-22/tcp  open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1.2 (protocol 2.0)
-80/tcp  open  http        Apache httpd 2.2.8 ((Ubuntu) PHP/5.2.4-2ubuntu5.6 with Suhosin-Patch)
-139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
-445/tcp open  netbios-ssn Samba smbd 3.0.28a (workgroup: WORKGROUP)
-
+update port scan
 {% endhighlight %}
 <br>
 
