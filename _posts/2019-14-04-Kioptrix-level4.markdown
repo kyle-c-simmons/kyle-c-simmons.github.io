@@ -18,12 +18,12 @@ Host is up (0.00027s latency).
 Not shown: 566 closed ports, 430 filtered ports
 PORT    STATE SERVICE     VERSION
 22/tcp  open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1.2 (protocol 2.0)
-| ssh-hostkey:
-|   1024 9b:ad:4f:f2:1e:c5:f2:39:14:b9:d3:a0:0b:e8:41:71 (DSA)
+ssh-hostkey:
+1024 9b:ad:4f:f2:1e:c5:f2:39:14:b9:d3:a0:0b:e8:41:71 (DSA)
 2048 85:40:c6:d5:41:26:05:34:ad:f8:6e:f2:a7:6b:4f:0e (RSA)
 80/tcp  open  http        Apache httpd 2.2.8 ((Ubuntu) PHP/5.2.4-2ubuntu5.6 with Suhosin-Patch)
 http-server-header: Apache/2.2.8 (Ubuntu) PHP/5.2.4-2ubuntu5.6 with Suhosin-Patch
-|_http-title: Site doesn't have a title (text/html).
+http-title: Site doesn't have a title (text/html).
 139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
 445/tcp open  netbios-ssn Samba smbd 3.0.28a (workgroup: WORKGROUP)
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
@@ -37,12 +37,12 @@ nbstat: NetBIOS name: KIOPTRIX4, NetBIOS user: (unknown), NetBIOS MAC: (unknown)
 |   NetBIOS computer name:
 |   Domain name: localdomain
 |   FQDN: Kioptrix4.localdomain
-|_  System time: 2019-04-15T15:34:29-04:00
+|   System time: 2019-04-15T15:34:29-04:00
 | smb-security-mode:
 |   account_used: guest
 |   authentication_level: user
 |   challenge_response: supported
-|_  message_signing: disabled (dangerous, but default)
+|   message_signing: disabled (dangerous, but default)
 |smb2-time: Protocol negotiation failed (SMB2)
 {% endhighlight %}
 <br>
