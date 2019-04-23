@@ -19,8 +19,11 @@ Penetration testing write ups of vulnerable machines.
 <h2>HackTheBox - Vulnerable machine write ups</h2>
 <hr>
 [HackTheBox: Lame - Writeup]
+<br>
 [HackTheBox: Granny - Writeup]
+<br>
 [HackTheBox: Blue - Writeup]
+<br>
 
 
 
