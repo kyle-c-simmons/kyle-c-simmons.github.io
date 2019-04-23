@@ -16,7 +16,19 @@ Penetration testing write ups of vulnerable machines.
 <br>
 [Kioptrix Level 4 - Writeup]
 
+<h2>HackTheBox - Vulnerable machine write ups</h2>
+<hr>
+[HackTheBox: Lame - Writeup]
+[HackTheBox: Granny - Writeup]
+[HackTheBox: Blue - Writeup]
+
+
+
 [Kioptrix Level 1 - Writeup]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/Kioptrix-level1/
 [Kioptrix Level 2 - Writeup]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/Kioptrix-level2/
 [Kioptrix Level 3 - Writeup]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/Kioptrix-level3/
 [Kioptrix Level 4 - Writeup]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/Kioptrix-level4/
+
+[HackTheBox: Lame - Writeup]: https://kyle-c-simmons.github.io/htb/htb-lame/
+[HackTheBox: Granny - Writeup]: https://kyle-c-simmons.github.io/htb/htb-granny/
+[HackTheBox: Blue - Writeup]: https://kyle-c-simmons.github.io/htb/htb-blue/

@@ -5,8 +5,8 @@ date:   2019-04-20 12:00:02 +0530
 author: Kyle Simmons
 categories: [htb]
 ---
-HackTheBox: Granny is an easy Windows machine to get into with several vulnerabilities
-that can be exploited to get in.
+HackTheBox: Granny was another easy machine to get into, Privilege escalation was problematic but it was a
+good lesson on how to deal with broken exploits.
 
 <h2>1.1 Enumeration</h2>
 I first started by doing a port scan of Granny.
@@ -26,7 +26,6 @@ PORT   STATE SERVICE VERSION
 |   Server Type: Microsoft-IIS/6.0
 |   Public Options: OPTIONS, TRACE, GET, HEAD, DELETE, PUT, POST, COPY, MOVE, MKCOL, PROPFIND, PROPPATCH, LOCK, UNLOCK, SEARCH
 |   WebDAV type: Unkown
-|_  Server Date: Wed, 17 Apr 2019 13:40:00 GMT
 Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
 Device type: general purpose
 Running (JUST GUESSING): Microsoft Windows 2003|2008|XP|2000 (92%)
