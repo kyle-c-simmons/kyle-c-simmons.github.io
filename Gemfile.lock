@@ -50,6 +50,8 @@ GEM
       jekyll (~> 3.3)
     jekyll-sitemap (1.3.1)
       jekyll (>= 3.7, < 5.0)
+    jekyll-theme-geneva-noire (0.1.0)
+      jekyll (~> 3.5)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     jemoji (0.11.0)
@@ -98,6 +100,7 @@ DEPENDENCIES
   jekyll-paginate
   jekyll-seo-tag (~> 2.2)
   jekyll-sitemap
+  jekyll-theme-geneva-noire (~> 0.1.0)
   jemoji
   minimal-mistakes-jekyll
 
