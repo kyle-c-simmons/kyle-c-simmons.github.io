@@ -1,0 +1,100 @@
+---
+layout: single
+title:  "HackTheBox: Devel - Writeup"
+date:   2019-05-15 22:50:02 +0530
+author: Kyle Simmons
+categories: [htb]
+---
+HackTheBox: Devel was an easy machine to root. It involved using basic enumeration techniques to get root access.
+
+<img src="/assets/images/htb/devel/devel-htb.png">
+
+
+<h2>1.1 - Scanning</h2>
+I first started by doing a port scan of Devel (10.10.10.5).
+{% highlight shell %}
+nmap -T4 -A -oA nmap -p- 10.10.10.5
+Nmap scan report for 10.10.10.5
+Host is up (0.032s latency).
+Not shown: 65533 filtered ports
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     Microsoft ftpd
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| 03-18-17  02:06AM       <DIR>          aspnet_client
+| 03-17-17  05:37PM                  689 iisstart.htm
+|_03-17-17  05:37PM               184946 welcome.png
+| ftp-syst:
+|_  SYST: Windows_NT
+80/tcp open  http    Microsoft IIS httpd 7.5
+| http-methods:
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/7.5
+|_http-title: IIS7
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose|phone|specialized
+Running (JUST GUESSING): Microsoft Windows 8|Phone|2008|7|8.1|Vista|2012 (92%)
+OS CPE: cpe:/o:microsoft:windows_8 cpe:/o:microsoft:windows cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_7 cpe:/o:microsoft:windows_8.1 cpe:/o:microsoft:windows_vista::- cpe:/o:microsoft:windows_vista::sp1 cpe:/o:microsoft:windows_server_2012
+Aggressive OS guesses: Microsoft Windows 8.1 Update 1 (92%), Microsoft Windows Phone 7.5 or 8.0 (92%), Microsoft Windows 7 or Windows Server 2008 R2 (91%), Microsoft Windows Server 2008 R2 (91%), Microsoft Windows Server 2008 R2 or Windows 8.1 (91%), Microsoft Windows Server 2008 R2 SP1 or Windows 8 (91%), Microsoft Windows 7 (91%), Microsoft Windows 7 Professional or Windows 8 (91%), Microsoft Windows 7 SP1 or Windows Server 2008 R2 (91%), Microsoft Windows 7 SP1 or Windows Server 2008 SP2 or 2008 R2 SP1 (91%)
+Network Distance: 2 hops
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+{% endhighlight %}
+
+The first thing that the port scan reveals is an open FTP anonymous port with access to the file system.
+
+<h3>1.2 - Exploring FTP anonymous</h3>
+Accessing ftp anonymous:
+
+<img src="/assets/images/htb/devel/anon-ftp-login.png">
+
+Once accessed, the first thing to do was to look for commands that can be used:
+
+<img src="/assets/images/htb/devel/ftp-usable-commands.png">
+
+Some useful commands are `dir` and `cd` for navigation and `put` for uploading files. A reverse shell could possibly be uploaded. A test file is uploaded with `put`. A test can be done to see if the file can be uploaded and accessed:
+
+<img src="/assets/images/htb/devel/ftp-test-upload.png">
+
+The file is successfully uploaded and can be accessed via the website by `10.10.10.5/test.txt`.
+
+
+<h2>2.1 - Exploitation</h2>
+Now that files can be uploaded and accessed remotely, a reverse shell can be generated and uploaded. `nmap` revealed that the web server is running `IIS` which means that the server is probably using `asp` files. A `asp` reverse shell can be generated with msfvenom:
+
+<img src="/assets/images/htb/devel/generate-payload.png">
+
+The generated payload can be uploaded via ftp:
+
+<img src="/assets/images/htb/devel/shell-uploaded.png">
+
+multi/handler setup:
+
+<img src="/assets/images/htb/devel/multi-handler.png">
+
+Now that the shell is uploaded and the multi/handler is ready, the shell is ready to be accessed via the web server:
+
+<img src="/assets/images/htb/devel/open-shell.png">
+
+Success! a connection is made and a reverse shell is open:
+
+<img src="/assets/images/htb/devel/multi-handler-worked.png">
+
+The `user.txt` can then be retrieved by navigating to the users directory to retrieve the `user.txt`
+
+<img src="/assets/images/htb/devel/user-found.png">
+
+
+<h2>3.1 - Post Exploitation</h2>
+
+The meterpreter session is put in the background and local exploit suggester is used to find possible local exploits:
+
+<img src="/assets/images/htb/devel/exploit-suggester.png">
+
+After running `ms13_053` from one of the above found exploits, it exploits the system and gives me system access.
+
+<img src="/assets/images/htb/devel/exploits-windows7.png">
+
+The root flag can now be retrieved:
+
+<img src="/assets/images/htb/devel/root-found.png">
+
+Success! This was a really easy machine to do with basic enumeration techniques required for both user and root.
