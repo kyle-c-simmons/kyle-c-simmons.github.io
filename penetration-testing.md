@@ -26,6 +26,10 @@ Penetration testing write ups of vulnerable machines.
 <br>
 [HackTheBox: Optimum - Writeup]
 <br>
+[HackTheBox: Irked - Writeup]
+<br>
+[HackTheBox: Nibbles - Writeup]
+
 
 
 
@@ -38,3 +42,5 @@ Penetration testing write ups of vulnerable machines.
 [HackTheBox: Granny - Writeup]: https://kyle-c-simmons.github.io/htb/htb-granny/
 [HackTheBox: Blue - Writeup]: https://kyle-c-simmons.github.io/htb/htb-blue/
 [HackTheBox: Optimum - Writeup]: https://kyle-c-simmons.github.io/htb/htb-optimum/
+[HackTheBox: Irked - Writeup]: https://kyle-c-simmons.github.io/htb/htb-irked/
+[HackTheBox: Nibbles - Writeup]: https://kyle-c-simmons.github.io/htb/htb-nibbles/
