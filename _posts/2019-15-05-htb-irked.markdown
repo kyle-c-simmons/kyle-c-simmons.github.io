@@ -1,0 +1,117 @@
+---
+layout: single
+title:  "HackTheBox: Irked - Writeup"
+date:   2019-05-15 13:24:02 +0530
+author: Kyle Simmons
+categories: [htb]
+---
+HackTheBox: Irked was a fairly easy machine which was mostly a CTF style machine on linux with some privilege escalation.
+
+
+<img src="/assets/images/htb/irked/irked-htb.png">
+
+
+<h2>1.1 - Scanning</h2>
+I first started by doing a port scan of Irked (10.10.10.117).
+{% highlight shell %}
+nmap -sC -sV -A -oA irked-scan 10.10.10.117
+Nmap scan report for 10.10.10.117
+Host is up (0.029s latency).
+Not shown: 997 closed ports
+PORT    STATE SERVICE VERSION
+22/tcp  open  ssh     OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0)
+80/tcp  open  http    Apache httpd 2.4.10 ((Debian))
+|_http-server-header: Apache/2.4.10 (Debian)
+|_http-title: Site doesn't have a title (text/html).
+111/tcp open  rpcbind 2-4 (RPC #100000)
+| rpcinfo:
+|   program version   port/proto  service
+|   100000  2,3,4        111/tcp  rpcbind
+|   100000  2,3,4        111/udp  rpcbind
+|   100024  1          50416/tcp  status
+|_  100024  1          55461/udp  status
+{% endhighlight %}
+
+The most interesting port open is the Apache server. The web page on port 80 only has an image of a smiley face. Dirb and Nikto is used in the background to enumerate the server, but nothing useful was found.
+
+<h3>1.2 - Web server enumeration</h3>
+
+An image is on the web server with html text saying `("IRC is almost found")`. This suggests that there may be IRC ports open. A more in-depth port scan can be done to confirm.
+<br><br>
+<img src="/assets/images/htb/irked/irked.jpg">
+<br><br>
+More in-depth port scan:
+{% highlight shell %}
+nmap -T4 -A -Pn -p- -oA nmap-scan2 10.10.10.117
+Nmap scan report for 10.10.10.117
+Host is up (0.030s latency).
+Not shown: 65528 closed ports
+PORT      STATE SERVICE VERSION
+22/tcp    open  ssh     OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0)
+80/tcp    open  http    Apache httpd 2.4.10 ((Debian))
+|_http-server-header: Apache/2.4.10 (Debian)
+|_http-title: Site doesn't have a title (text/html).
+111/tcp   open  rpcbind 2-4 (RPC #100000)
+| rpcinfo:
+|   program version   port/proto  service
+|   100000  2,3,4        111/tcp  rpcbind
+|   100000  2,3,4        111/udp  rpcbind
+|   100024  1          50416/tcp  status
+|_  100024  1          55461/udp  status
+6697/tcp  open  irc     UnrealIRCd
+8067/tcp  open  irc     UnrealIRCd
+50416/tcp open  status  1 (RPC #100024)
+65534/tcp open  irc     UnrealIRCd
+{% endhighlight %}
+
+<h3>1.3 - UnrealIRCd enumeration</h3>
+
+The port scan shows that `UnrealIRCd` is open on several ports, this is likely the point of attack. Searchsploit and metasploit is used to find possible vulnerabilities on `UnrealIRCd`. After doing some search an RCE exploit is found for metasploit:
+
+[UnrealIRCd 3.2.8.1 RCE exploit]
+
+<h2>2.1 - Exploitation</h2>
+The exploit found is loaded up in metasploit and the `rhosts` is set to the targets IP address (10.10.10.117).
+<br><br>
+<img src="/assets/images/htb/irked/ircd-backdoor.png">
+<br><br>
+The exploit is successful and a reverse shell is opened!
+
+<h2>3.1 - Post Exploitation</h2>
+After doing some enumeration of the user account, a hidden file is found in the directory of the `djmardov` user. When viewing the contents of the file a password is revealed with the text 'Super Elite steg backup pw'. This suggests that there is some form of steganography used.
+
+<img src="/assets/images/htb/irked/backup-steg.png">
+
+<h3>3.2 - Steganography</h3>
+The tool `steghide` is used to attempt to decrypt the image and find any hidden information. The password found on the `.backup` file is used with `steghide`:
+
+<img src="/assets/images/htb/irked/steg.png">
+
+A file `pass.txt` has retrieved from the steganography extraction which contains a password.
+
+<h3>3.3 - Further user enumeration</h3>
+The user `djmardov` can be used to login via SSH with the password found. Once logged more enumeration can be done
+to attempt to get root access.
+
+<img src="/assets/images/htb/irked/find-perms.png">
+
+When executing the file it shows that the file is used to test user permissions.
+This file appears to execute the `/tmp/listusers` file which can be manipulated to execute root commands.
+
+<img src="/assets/images/htb/irked/viewuser.png">
+
+A file inside /tmp is created called `listusers` and a command is added to the file via the text editor `vi`. Inside the file
+`cat /root/root.txt` is inputted and saved. chmod is then used to make the /tmp file executable to view the flag. The file is executed with `./usr/bin/viewuser` to view the root flag.
+
+<img src="/assets/images/htb/irked/flag-found.png">
+
+
+
+
+
+
+
+
+
+
+[UnrealIRCd 3.2.8.1 RCE exploit]: https://www.rapid7.com/db/modules/exploit/unix/irc/unreal_ircd_3281_backdoor
