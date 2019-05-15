@@ -105,13 +105,4 @@ A file inside /tmp is created called `listusers` and a command is added to the f
 
 <img src="/assets/images/htb/irked/flag-found.png">
 
-
-
-
-
-
-
-
-
-
 [UnrealIRCd 3.2.8.1 RCE exploit]: https://www.rapid7.com/db/modules/exploit/unix/irc/unreal_ircd_3281_backdoor
