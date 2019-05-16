@@ -33,6 +33,9 @@ Penetration testing write ups of vulnerable machines.
 [HackTheBox: Grandpa - Writeup]
 <br>
 [HackTheBox: Devel - Writeup]
+<br>
+[HackTheBox: Bashed - Writeup]
+
 
 
 
@@ -50,3 +53,4 @@ Penetration testing write ups of vulnerable machines.
 [HackTheBox: Nibbles - Writeup]: https://kyle-c-simmons.github.io/htb/htb-nibbles/
 [HackTheBox: Grandpa - Writeup]: https://kyle-c-simmons.github.io/htb/htb-grandpa/
 [HackTheBox: Devel - Writeup]: https://kyle-c-simmons.github.io/htb/htb-devel/
+[HackTheBox: Bashed - Writeup]: https://kyle-c-simmons.github.io/htb/htb-bashed/
