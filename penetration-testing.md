@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: collection
 title: Penetration Testing
 permalink: /penetration-testing/
 ---
