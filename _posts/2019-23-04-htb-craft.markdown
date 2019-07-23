@@ -1,9 +1,0 @@
----
-layout: protected
-title:  "HackTheBox: Granny - Writeup"
-password: "pass"
-date:   2019-06-20 12:00:02 +0530
-author: Kyle Simmons
-categories: [htb]
----
-test
