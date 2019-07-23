@@ -5,6 +5,7 @@ date:   2019-04-23 23:24:02 +0530
 author: Kyle Simmons
 categories: [htb]
 password: test
+permalink: /crafty
 ---
 HackTheBox: Blue was the simplest machine i have done, was easy to get into using a popular exploit.
 
