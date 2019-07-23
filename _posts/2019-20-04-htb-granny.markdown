@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title:  "HackTheBox: Granny - Writeup"
 date:   2019-04-20 12:00:02 +0530
 author: Kyle Simmons
@@ -9,6 +9,7 @@ HackTheBox: Granny was another easy machine to get into, Privilege escalation wa
 good lesson on how to deal with broken exploits.
 
 <h2>1.1 Enumeration</h2>
+<br>
 I first started by doing a port scan of Granny.
 {% highlight shell %}
 nmap -sC -sV -A -oA granny-scan 10.10.10.15
@@ -53,6 +54,7 @@ After looking around online i found a good sources online to use curl for method
 [Webdav curl examples link]
 
 <h2>2.1 Exploitation</h2>
+<br>
 Firstly a shell needs to be generated to upload to the web server. Since the server is running
 asp as found in enumeration, an asp shell can be generated through msfvenom.
 
@@ -69,7 +71,7 @@ netcat listener.
 <img src="/assets/images/htb/granny/reverse-shell-done.png">
 
 <h2>3.1 Post exploitation</h2>
-
+<br>
 A `whoami /all` reveals that i do not have a privileged shell, this will require further post enumeration to
 get a privileged shell.
 

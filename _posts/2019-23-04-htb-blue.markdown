@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title:  "HackTheBox: Blue - Writeup"
 date:   2019-04-23 23:24:02 +0530
 author: Kyle Simmons
@@ -8,6 +8,7 @@ categories: [htb]
 HackTheBox: Blue was the simplest machine i have done, was easy to get into using a popular exploit.
 
 <h2>1.1 Enumeration</h2>
+<br>
 I first started by doing a port scan of Blue (10.10.10.40).
 {% highlight shell %}
 nmap -sV -A -sC -oA blue-scan 10.10.10.40
@@ -66,6 +67,7 @@ the NSA's EternalBlue exploit. Metasploit can be booted up to check if this serv
 <br><br>
 
 <h2>2.1 Exploitation</h2>
+<br>
 The scan revealed that MS17-010 can be used against the target. The exploit is loaded in Metasploit.
 <br><br>
 <img src="/assets/images/htb/blue/eternalblue-exploited.png">
@@ -73,6 +75,7 @@ The scan revealed that MS17-010 can be used against the target. The exploit is l
 The exploit is successful and a reverse shell is opened!
 
 <h2>3.1 Getting the flags</h2>
+<br>
 A quick look and i have system privileges which means both the user and root flag can easily be retrieved.
 <img src="/assets/images/htb/blue/system-priv.png">
 <br><br>

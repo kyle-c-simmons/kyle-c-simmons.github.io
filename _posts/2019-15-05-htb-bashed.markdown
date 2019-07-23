@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title:  "HackTheBox: Bashed - Writeup"
 date:   2019-05-15 23:34:00 +0530
 author: Kyle Simmons
@@ -11,6 +11,7 @@ HackTheBox: Bashed was more of a CTF style machine and is ranked as easy on HTB.
 
 
 <h2>1.1 - Scanning</h2>
+<br>
 I first started by doing a port scan of Bashed (10.10.10.68).
 {% highlight shell %}
 nmap -sV -sC -A -oA bashed-scan 10.10.10.68
@@ -55,6 +56,7 @@ GENERATED WORDS: 4612
 
 
 <h2>2.1 - Exploitation</h2>
+<br>
 Dirb reveals several directories including one called `/dev`. When browsing this directory there is a php file called `phpbash.php`.
 
 <img src="/assets/images/htb/bashed/shell-found.png">
@@ -66,6 +68,7 @@ When clicking the `phpbash.php` file a shell is opened and user is found:
 
 
 <h2>3.1 - Post Exploitation</h2>
+<br>
 When entering the command `sudo -l ` it reveals that scriptmanager does not have any password. An attempt is made to switch to the `scriptmanager` user:
 
 <img src="/assets/images/htb/bashed/change-user.png">

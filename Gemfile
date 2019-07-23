@@ -16,7 +16,6 @@ gem "jekyll-gist"
 gem "jekyll-data"
 gem "jemoji"
 gem "jekyll-include-cache"
-gem "minimal-mistakes-jekyll"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do

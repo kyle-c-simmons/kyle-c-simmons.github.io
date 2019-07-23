@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title:  "HackTheBox: Grandpa - Writeup"
 date:   2019-05-15 20:30:02 +0530
 author: Kyle Simmons
@@ -14,6 +14,7 @@ this machine to migrate an exploit to another process.
 
 
 <h2>1.1 - Scanning</h2>
+<br>
 I first started by doing a port scan of Grandpa (10.10.10.14).
 {% highlight shell %}
 nmap -T4 -A -oA nmap -p- 10.10.10.14
@@ -46,6 +47,7 @@ The target only has port 80 running Microsoft IIS 6.0 which is an old version of
 
 
 <h2>2.1 - Exploitation</h2>
+<br>
 Metasploit is launched and `IIS` is searched for to find the exploit:
 
 <img src="/assets/images/htb/grandpa/exploited.png">

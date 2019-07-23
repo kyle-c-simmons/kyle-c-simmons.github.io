@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title:  "HackTheBox: Devel - Writeup"
 date:   2019-05-15 22:50:02 +0530
 author: Kyle Simmons
@@ -11,6 +11,7 @@ HackTheBox: Devel was an easy machine to root. It involved using basic enumerati
 
 
 <h2>1.1 - Scanning</h2>
+<br>
 I first started by doing a port scan of Devel (10.10.10.5).
 {% highlight shell %}
 nmap -T4 -A -oA nmap -p- 10.10.10.5
@@ -42,6 +43,7 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 The first thing that the port scan reveals is an open FTP anonymous port with access to the file system.
 
 <h3>1.2 - Exploring FTP anonymous</h3>
+<br>
 Accessing ftp anonymous:
 
 <img src="/assets/images/htb/devel/anon-ftp-login.png">
@@ -58,6 +60,7 @@ The file is successfully uploaded and can be accessed via the website by `10.10.
 
 
 <h2>2.1 - Exploitation</h2>
+<br>
 Now that files can be uploaded and accessed remotely, a reverse shell can be generated and uploaded. `nmap` revealed that the web server is running `IIS` which means that the server is probably using `asp` files. A `asp` reverse shell can be generated with msfvenom:
 
 <img src="/assets/images/htb/devel/generate-payload.png">
@@ -84,7 +87,7 @@ The `user.txt` can then be retrieved by navigating to the users directory to ret
 
 
 <h2>3.1 - Post Exploitation</h2>
-
+<br>
 The meterpreter session is put in the background and local exploit suggester is used to find possible local exploits:
 
 <img src="/assets/images/htb/devel/exploit-suggester.png">

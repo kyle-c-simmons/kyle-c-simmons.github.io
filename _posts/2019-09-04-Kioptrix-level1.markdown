@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: post
 title:  "Kioptrix Level 1 Writeup"
 date:   2019-04-09 15:44:02 +0530
 author: Kyle Simmons
@@ -10,6 +10,7 @@ Kioptrix level 1 is an easy vulnerable machine on vulnhub.
 [Kioptrix Level 1 download page]
 <br>
 <h2>1. Enumeration</h2>
+<br>
 The port scan below reveals several open ports including SSH, HTTP, RPC, Samba and 443.
 
 {% highlight shell_session %}
@@ -59,6 +60,7 @@ Host script results:
 {% endhighlight %}<br>
 
 <h3>1.1 OpenSSH port 22</h3>
+<br>
 Using <font color="red">searchsploit</font>, there appears to be no known vulnerabilities in the exploit database for OpenSSH.
 <br>
 <br>
@@ -106,6 +108,7 @@ The only files that appear to be out of place are `~operator` and `~root`. Howev
 a CODE:403 and cannot be accessed so this is a dead end.
 
 <h3>Port 80 is running:</h3>
+<br>
 -Apache 1.3.20 (Not vulnerable)<br>
 -Red-Hat/Linux <br>
 -mod_ssl/2.8.4 OpenSSL/0.9.6b<br><br>

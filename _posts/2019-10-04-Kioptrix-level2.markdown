@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: post
 title:  "Kioptrix Level 2 Writeup"
 date:   2019-04-10 13:00:02 +0530
 author: Kyle Simmons
@@ -13,6 +13,7 @@ Kioptrix level 2 vulnhub link below: <br>
 <br><br>
 
 <h2>1. Enumeration</h2>
+<br>
 The first plan is starting with a port scan to see what services are running.
 
 {% highlight shell_session %}
@@ -66,20 +67,24 @@ enumeration on these ports.
 <br><br>
 
 <h3>1.1 SSH</h3>
+<br>
 SSH is running the same versions as level 1 which are not vulnerable and searchsploit
 came back with nothing on the SSH versions.
 <br><br>
 
 <h3>1.2 HTTP</h3>
+<br>
 The HTTP server is running apache 2.0.52 which is vulnerable to a <font color="red">GET Denial of Service</font>
 exploit. However, this will not help get a reverse shell. Dirb and Nikto does not reveal any useful information.
 <br><br>
 
 <h3>1.3 ipp CUPS 1.1 - Port 631</h3>
+<br>
 CUPS 1.1 has a remote command execution exploit, however i could not get this exploit to work.
 <br><br>
 
 <h2> 2.1 Exploitation of web server</h2>
+<br>
 The webpage contains a login promopt which could potentially be connected to the SQL database since
 mysql is running on port 3306. SQL Injection could be tried here.<br><br>
 
@@ -105,6 +110,7 @@ root access, privilege escalation has to be done to try and get root.
 
 
 <h2> 3.1 Post exploitation</h2>
+<br>
 After looking through the file system serveral useful information has been found.<br>
 -> passwd file is viewable `cat /etc/passwd` which contains a list of all the users on the system. <br>
 -> PHP file in www/html contains the SQL login username / password. <br>

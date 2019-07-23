@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title:  "HackTheBox: Lame - Writeup"
 date:   2019-04-20 11:00:02 +0530
 author: Kyle Simmons
@@ -8,6 +8,7 @@ categories: [htb]
 HackTheBox: Lame was a really simple machine which only took a few minutes to get into. This was my first HTB machine i did.
 
 <h2>1.1 Enumeration</h2>
+<br>
 I first started by doing a port scan of Lame (10.10.10.3).
 {% highlight shell %}
 nmap -sV -A -Pn -oN lame-scan 10.10.10.3
@@ -54,6 +55,7 @@ A quick searchsploit shows a command execution exploit for `Samba 3.0.20`.
 <br>
 
 <h2>2.1 Exploitation</h2>
+<br>
 The exploit is opened and executed in metasploit which is successful.
 <br><br>
 <img src="/assets/images/htb/lame/exploited.png">
@@ -61,6 +63,7 @@ The exploit is opened and executed in metasploit which is successful.
 The exploit gives us root access which means both flags can easily be retrieved without privilege escalation.
 
 <h2>3.1 Getting the flags</h2>
+<br>
 The flag is easily found by going into the root directory and viewing the flag.
 <br><br>
 <img src="/assets/images/htb/lame/flag.png">

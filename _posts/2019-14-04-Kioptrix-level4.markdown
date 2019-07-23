@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: post
 title:  "Kioptrix Level 4 Writeup"
 date:   2019-04-16 11:00:02 +0530
 author: Kyle Simmons
@@ -11,6 +11,7 @@ Kioptrix level 4 vulnhub link below: <br>
 [Kioptrix Level 4 download page]
 <br><br>
 <h2>1.1 Enumeration</h2>
+<br>
 A port scan reveals that 4 ports are open (22, 80, 139 and 445).
 {% highlight shell %}
 nmap -T4 -sV -A -oA nmap-scan 192.168.0.73
@@ -47,6 +48,7 @@ Host script results:
 
 
 <h3>1.2 SSH</h3>
+<br>
 SSH appears to not have any vulnerable versions. However, SSH could possibly have weak credentials.
 <br><br>
 
@@ -61,6 +63,7 @@ Password: <font color="red">1' or 1 = 1#</font>
 Login successful!
 
 <h3>1.4 HTTP Testing for LFI</h3>
+<br>
 The URL has <font color="red">username=Admin</font>. LFI is tested here. However,
 each file says 'permission denied'. This appears to be a dead end.<br><br>
 <img src="/assets/images/Kioptrix/Kioptrix4-lfi-error.png">
@@ -81,6 +84,7 @@ Several users are revealed:
 The users can be further tested on the website and SSH.
 
 <h2>2.1 Exploitation</h2>
+<br>
 An attempt is made to perform a dictonary attack over SSH against these usernames
 but that did not work. After that an attempt is made to login with the users enumerated
 on the login page. The 'john' user shows the password in plaintext! With a password of
@@ -102,6 +106,7 @@ Found on this link: [Escaping/Bypass From Jail/Restricted Linux Shells]
 <img src="/assets/images/Kioptrix/kioptrix4-priv-escalated.png">
 
 <h2>3.1 Post Exploitation</h2>
+<br>
 I then changed directory to the root and found a 'congrats.txt' file which
 contained the flag!<br><br>
 <img src="/assets/images/Kioptrix/kioptrix4-got-flag.png">

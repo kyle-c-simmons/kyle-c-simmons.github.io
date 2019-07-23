@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: post
 title:  "Kioptrix Level 3 Writeup"
 date:   2019-04-14 21:28:02 +0530
 author: Kyle Simmons
@@ -11,6 +11,7 @@ Kioptrix level 3 vulnhub link below: <br>
 [Kioptrix Level 3 download page]
 <br><br>
 <h2>1. Enumeration</h2>
+<br>
 A port scan reveals that only SSH and HTTP is open.
 {% highlight shell_session %}
 nmap -T4 -sV -A -oA nmapscan 192.168.0.71
@@ -28,11 +29,13 @@ PORT   STATE SERVICE VERSION
 
 
 <h3>1.1 SSH</h3>
+<b>
 SSH appears to not have any vulnerable versions. However, SSH could possibly have weak credentials.
 <br><br>
 
 
 <h3>1.2.1 HTTP</h3>
+<br>
 Dirb and Nikto is run in the background to check for any interesting pages or vulnerabilities. Dirb reveals
 that there is an accessible <font color="red">phpmyadmin</font> page. The page can be logged in
 using the username <font color="red">root</font> and the
@@ -53,6 +56,7 @@ vulnerabilities on this machine.
 
 
 <h3>1.2.2 HTTP - LFI</h3>
+<br>
 The URL appears to include files, this could possibly be vulnerable to LFI.
 <br><br>
 `http://192.168.0.71/index.php?system=Blog`
@@ -138,7 +142,7 @@ The <font color="red">dev_accounts</font> results contain 2 usernames and 2 hash
 crackable with sqlmap.
 <br><br>
 <h3>1.2.4 HTTP - SQLI (without sqlmap)</h3>
-
+<br>
 Checking for the amount of columns by using <font color="red">ORDER BY</font>.<br>
 `id=2 union select 1,2,3,4,5,6`
 <br><br>
@@ -156,7 +160,7 @@ john the ripper.
 <br><br>
 
 <h2>2.1 Exploitation - SSH</h2>
-
+<br>
 The credentials fetched from the LFI attack can be run against a dictionary.<br>
 {% highlight shell_session %}
 hydra -t 6 -l loneferret -P 10k-most-common.txt 192.168.0.71 ssh

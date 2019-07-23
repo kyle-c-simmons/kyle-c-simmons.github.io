@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title:  "HackTheBox: Irked - Writeup"
 date:   2019-05-15 13:23:02 +0530
 author: Kyle Simmons
@@ -12,6 +12,7 @@ HackTheBox: Irked was a fairly easy machine which was mostly a CTF style machine
 
 
 <h2>1.1 - Scanning</h2>
+<br>
 I first started by doing a port scan of Irked (10.10.10.117).
 {% highlight shell %}
 nmap -sC -sV -A -oA irked-scan 10.10.10.117
@@ -35,7 +36,7 @@ PORT    STATE SERVICE VERSION
 The most interesting port open is the Apache server. The web page on port 80 only has an image of a smiley face. Dirb and Nikto is used in the background to enumerate the server, but nothing useful was found.
 
 <h3>1.2 - Web server enumeration</h3>
-
+<br>
 An image is on the web server with html text saying `("IRC is almost found")`. This suggests that there may be IRC ports open. A more in-depth port scan can be done to confirm.
 <br><br>
 <img src="/assets/images/htb/irked/irked.jpg">
@@ -65,12 +66,13 @@ PORT      STATE SERVICE VERSION
 {% endhighlight %}
 
 <h3>1.3 - UnrealIRCd enumeration</h3>
-
+<br>
 The port scan shows that `UnrealIRCd` is open on several ports, this is likely the point of attack. Searchsploit and metasploit is used to find possible vulnerabilities on `UnrealIRCd`. After doing some search an RCE exploit is found for metasploit:
 
 [UnrealIRCd 3.2.8.1 RCE exploit]
 
 <h2>2.1 - Exploitation</h2>
+<br>
 The exploit found is loaded up in metasploit and the `rhosts` is set to the targets IP address (10.10.10.117).
 <br><br>
 <img src="/assets/images/htb/irked/ircd-backdoor.png">
@@ -78,11 +80,13 @@ The exploit found is loaded up in metasploit and the `rhosts` is set to the targ
 The exploit is successful and a reverse shell is opened!
 
 <h2>3.1 - Post Exploitation</h2>
+<br>
 After doing some enumeration of the user account, a hidden file is found in the directory of the `djmardov` user. When viewing the contents of the file a password is revealed with the text 'Super Elite steg backup pw'. This suggests that there is some form of steganography used.
 
 <img src="/assets/images/htb/irked/backup-steg.png">
 
 <h3>3.2 - Steganography</h3>
+<br>
 The tool `steghide` is used to attempt to decrypt the image and find any hidden information. The password found on the `.backup` file is used with `steghide`:
 
 <img src="/assets/images/htb/irked/steg.png">
@@ -90,6 +94,7 @@ The tool `steghide` is used to attempt to decrypt the image and find any hidden 
 A file `pass.txt` has retrieved from the steganography extraction which contains a password.
 
 <h3>3.3 - Further user enumeration</h3>
+<br>
 The user `djmardov` can be used to login via SSH with the password found. Once logged more enumeration can be done
 to attempt to get root access.
 
