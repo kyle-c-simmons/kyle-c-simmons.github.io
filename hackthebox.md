@@ -6,11 +6,15 @@ permalink: /hackthebox/
 My HackTheBox retired machine write ups. The Active boxes are password protected with the root flag.
 <script src="https://www.hackthebox.eu/badge/109871"></script>
 <br><br>
-<strong>Active:</strong>
+<h6>Active Boxes:</h6>
+<hr>
 <br>
 [Craft]
 
 
+<br>
+<br>
+<h6>Retired Boxes:</h6>
 <strong>Easy:</strong>
 <hr>
 [Lame]
