@@ -1,9 +1,10 @@
 ---
-layout: post
+layout: secret_post
 title:  "HackTheBox: Nibbles - Writeup"
 date:   2019-05-15 15:12:02 +0530
 author: Kyle Simmons
 categories: [htb]
+key: test
 ---
 HackTheBox: Nibbles is a easy 20 point machine on HTB which involved mostly exploiting a web server. I found
 this machine quite fun and is one of my favourite HTB machine with the methods used to exploit it.
