@@ -7,10 +7,6 @@ My HackTheBox retired machine write ups. The Active boxes are password protected
 <script src="https://www.hackthebox.eu/badge/109871"></script>
 <br><br>
 <strong>Active:</strong>
-<hr>
-[Haystack]
-<br>
-[Player]
 <br>
 [Craft]
 
@@ -42,20 +38,14 @@ My HackTheBox retired machine write ups. The Active boxes are password protected
 
 
 
+[Craft]: https://hok.ninja/2019/07/23/htb-craft
 
-
-
-[Kioptrix Level 1 - Writeup]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/Kioptrix-level1/
-[Kioptrix Level 2 - Writeup]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/Kioptrix-level2/
-[Kioptrix Level 3 - Writeup]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/Kioptrix-level3/
-[Kioptrix Level 4 - Writeup]: https://kyle-c-simmons.github.io/vulnhub/vulnerable-machine/Kioptrix-level4/
-
-[Lame]: https://kyle-c-simmons.github.io/htb/htb-lame/
-[Granny]: https://kyle-c-simmons.github.io/htb/htb-granny/
-[Blue]: https://kyle-c-simmons.github.io/htb/htb-blue/
-[Optimum]: https://kyle-c-simmons.github.io/htb/htb-optimum/
-[Irked]: https://kyle-c-simmons.github.io/htb/htb-irked/
-[Nibbles]: https://kyle-c-simmons.github.io/htb/htb-nibbles/
-[Grandpa]: https://kyle-c-simmons.github.io/htb/htb-grandpa/
-[Devel]: https://kyle-c-simmons.github.io/htb/htb-devel/
-[Bashed]: https://kyle-c-simmons.github.io/htb/htb-bashed/
+[Lame]: https://hok.ninja/2019/04/20/htb-lame
+[Granny]: https://hok.ninja/2019/04/20/htb-granny
+[Blue]: https://hok.ninja/2019/04/23/htb-blue
+[Optimum]: https://hok.ninja/2019/05/04/htb-optimum
+[Irked]: https://hok.ninja/2019/05/15/htb-irked
+[Nibbles]: https://hok.ninja/2019/05/15/htb-nibbles
+[Grandpa]: https://hok.ninja/2019/05/15/htb-grandpa
+[Devel]: https://hok.ninja/2019/05/15/htb-devel
+[Bashed]: https://hok.ninja/2019/05/15/htb-bashed
