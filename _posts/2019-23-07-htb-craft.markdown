@@ -1,6 +1,6 @@
 ---
 title: "HackTheBox Craft - Writeup"
-description: NYU East Asian Studies Department, MA Thesis Defense
+description: A Writeup on HackTheBox Craft (Medium box).
 date:   2019-07-23 18:00:00 +0100
 layout: pdf
 ---
