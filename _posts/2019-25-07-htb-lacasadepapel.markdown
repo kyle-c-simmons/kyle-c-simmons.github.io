@@ -1,7 +1,7 @@
 ---
 title: "HackTheBox LaCasaDePapel - Writeup"
 description: A Writeup on HackTheBox LaCasaDePapel (Easy box).
-date:   2019-07-23 20:00:00 +0100
+date:   2019-07-25 20:00:00 +0100
 layout: pdf
 ---
 <p>

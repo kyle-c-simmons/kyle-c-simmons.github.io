@@ -9,14 +9,17 @@ My HackTheBox retired machine write ups. The Active boxes are password protected
 <h6>Active Boxes:</h6>
 <hr>
 <br>
+[LaCasaDePapel]
+[Player]
+
 [Craft]
 
 
 <br>
 <br>
 <h6>Retired Boxes:</h6>
-<strong>Easy:</strong>
 <hr>
+<strong>Easy:</strong>
 [Lame]
 <br>
 [Granny]
@@ -41,7 +44,8 @@ My HackTheBox retired machine write ups. The Active boxes are password protected
 
 
 
-
+[LaCasaDePapel]: https://hok.ninja/2019/07/25/htb-lacasadepapel
+[Player]: https://hok.ninja/2019/07/26/htb-player
 [Craft]: https://hok.ninja/2019/07/23/htb-craft
 
 [Lame]: https://hok.ninja/2019/04/20/htb-lame
