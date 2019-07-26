@@ -10,7 +10,9 @@ My HackTheBox retired machine write ups. The Active boxes are password protected
 <hr>
 <br>
 [LaCasaDePapel]
+<br>
 [Player]
+<br>
 [Craft]
 
 
