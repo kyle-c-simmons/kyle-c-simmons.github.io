@@ -11,7 +11,6 @@ My HackTheBox retired machine write ups. The Active boxes are password protected
 <br>
 [LaCasaDePapel]
 [Player]
-
 [Craft]
 
 
@@ -20,6 +19,7 @@ My HackTheBox retired machine write ups. The Active boxes are password protected
 <h6>Retired Boxes:</h6>
 <hr>
 <strong>Easy:</strong>
+<br>
 [Lame]
 <br>
 [Granny]
