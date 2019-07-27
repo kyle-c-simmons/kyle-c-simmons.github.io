@@ -1,7 +1,7 @@
 ---
 title: "HackTheBox Writeup - Writeup"
 description: A Writeup on HackTheBox Writeup (Easy box).
-date:   2019-07-26 17:48:00 +0100
+date:   2019-07-27 17:48:00 +0100
 layout: pdf
 ---
 <p>
