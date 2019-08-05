@@ -1,18 +1,10 @@
 ---
 layout: page
-title: AD pentesting
+title: AD Pentesting Made Easy
 permalink: /ad-pentesting/
 ---
+[1 - An Introduction to Active Directory]
 
-<h6>AD Attacks Made Easy</h6>
 
--What is Active Directory?
--Setting up an AD Lab
 
--Active Directory enumeration 1
--Active Directory enumeration 2
--Active Directory enumeration 3
-
--AD Attacks
-
--kerbos
+[1 - An Introduction to Active Directory]: https://hok.ninja/2019/08/05/ad-introduction
