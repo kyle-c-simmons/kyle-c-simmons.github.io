@@ -4,7 +4,7 @@ description: A brief introduction to Kerberos.
 date:   2019-08-07 16:19:00 +0100
 layout: page
 ---
-Kerberos is an authentication protocol used natively in Active Directory to authenticate users. hosts and services to the network. This is used to tell the network what resources or services clients are allowed to access.
+Kerberos is an authentication protocol used natively in Active Directory to authenticate users, hosts and services to the network. This is used to tell the network what resources or services clients are allowed to access.
 
 **In simple terms Kerberos is:**
 * A protocol for authentication
