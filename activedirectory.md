@@ -4,6 +4,7 @@ title: AD Pentesting Made Easy
 permalink: /ad-pentesting/
 ---
 **[1 - An introduction to Active Directory]**
+<br>
 **[2 - An introduction to Kerberos]**
 
 
