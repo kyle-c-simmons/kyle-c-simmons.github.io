@@ -1,6 +1,6 @@
 ---
 title: "An Introduction to Active Directory"
-description: A Safe on HackTheBox Writeup (Easy box).
+description: A brief introduction to Active Directory
 date:   2019-08-05 19:45:00 +0100
 layout: page
 ---
