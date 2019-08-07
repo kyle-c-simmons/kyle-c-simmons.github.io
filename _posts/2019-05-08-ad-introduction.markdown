@@ -4,7 +4,6 @@ description: A brief introduction to Active Directory
 date:   2019-08-05 19:45:00 +0100
 layout: page
 ---
-<h5>AD Pentesting Made Easy</h5>
 There is not many resources on Active Directory attacks online so i decided to make a blog series to contribute to the community. This will be a mini blog series on Active Directory penetration testing covering the basic to all the way to more advanced topics eventually.
 
 <h5>What is Active Directory?</h5>
