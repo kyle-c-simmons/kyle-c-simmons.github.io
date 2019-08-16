@@ -8,6 +8,8 @@ My HackTheBox retired machine write ups. The Active boxes are password protected
 <br><br>
 <h6>Active Boxes:</h6>
 <hr>
+[SwagShop]
+<br>
 [Writeup]
 <br>
 [Player]
@@ -19,7 +21,7 @@ My HackTheBox retired machine write ups. The Active boxes are password protected
 <br>
 <h6>Retired Boxes:</h6>
 <hr>
-<strong>Easy:</strong>
+[LaCasaDePapel]
 <br>
 [Lame]
 <br>
@@ -38,18 +40,15 @@ My HackTheBox retired machine write ups. The Active boxes are password protected
 [Devel]
 <br>
 [Bashed]
-<br>
-[LaCasaDePapel]
-
-
-<strong>Medium:</strong><br>
 
 
 
 
+[SwagShop]: https://hok.ninja/2019/08/16/htb-swagshop
 [Writeup]: https://hok.ninja/2019/07/27/htb-writeup
 [Player]: https://hok.ninja/2019/07/26/htb-player
 [Craft]: https://hok.ninja/2019/07/23/htb-craft
+[Safe]: https://hok.ninja/2019/08/01/htb-safe
 
 [Lame]: https://hok.ninja/2019/04/20/htb-lame
 [Granny]: https://hok.ninja/2019/04/20/htb-granny
@@ -61,4 +60,3 @@ My HackTheBox retired machine write ups. The Active boxes are password protected
 [Devel]: https://hok.ninja/2019/05/15/htb-devel
 [Bashed]: https://hok.ninja/2019/05/15/htb-bashed
 [LaCasaDePapel]: https://hok.ninja/2019/07/25/htb-lacasadepapel
-[Safe]: https://hok.ninja/2019/08/01/htb-safe

@@ -6,19 +6,19 @@ layout: page
 ---
 There is not many resources on Active Directory attacks online so i decided to make a blog series to contribute to the community. This will be a mini blog series on Active Directory penetration testing covering the basic to all the way to more advanced topics eventually.
 
-<h5>What is Active Directory?</h5>
+##### **<span style="color:#009588">What is Active Directory?</span>**
 
 Active Directory (AD) is a collection of services to manage a Windows network which runs on a Windows Server to manage a network, computers, services
 and users. Active Directory stores data as objects such as services, users, groups and devices. This provides a way for administrators to grow and manage a large
 network, typically used in large organisations.
 <br>
-<h5>Active Directory Services</h5>
-Active Directory provides several services to manage an Active Directory network which includes:
-<br><br>
-• <b>AD DS: Active Directory Domain Services</b> - AD DS is a role used to manage information and resources on a network. This
+
+##### **<span style="color:#009588">Active Directory services</span>**
+**Active Directory provides several services to manage an Active Directory network which includes:**
+* **AD DS: Active Directory Domain Services** - AD DS is a role used to manage information and resources on a network. This
 includes the management of computers, users, services, network devices and applications.
 <br>
-• <b>AD CS: AD Certificate Services</b> - AD CS is Microsoft implementation of public key infrastructure (PKI) used to manage certificates
+* **AD CS: AD Certificate Services** - AD CS is Microsoft implementation of public key infrastructure (PKI) used to manage certificates
 on an AD network. PKI is set of hardware, software, people, policies, and procedures needed to create manage, distribute, store and
 revoke digital certificates.
 <br>

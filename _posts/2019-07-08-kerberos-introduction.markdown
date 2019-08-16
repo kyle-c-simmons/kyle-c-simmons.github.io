@@ -43,7 +43,7 @@ research conducted on how to attack Kerberos.
 **The following attacks are some common attacks used against Kerberos:**
 
 * **Kerberoasting** - Cracking Kerberos service tickets (TGT) to get access to a service.
-* **LLMNR Poisioning** - Capture usernames and hashes using Responder whcih can be cracked or used in Pass the Hash attacks.
+* **LLMNR Poisoning** - Capture usernames and hashes using Responder which can be cracked or used in Pass the Hash attacks.
 * **Pass the Ticket** - Steal a users ticket and use it to authenticate to the network without a password.
 * **Silver Ticket** - Using a user account to create a fake authenticated ticket to access services.
 * **Golden Ticket** - Use the KRBTGT account (Golden ticket) authentication token to pass-the-hash on any account on the network.
