@@ -1,0 +1,11 @@
+---
+title: "HackTheBox Zetta - Writeup"
+description: A writeup on HackTheBox Zetta (Hard box).
+date:   2019-09-07 18:37:00 +0100
+layout: pdf
+---
+<p>
+A Writeup on HackTheBox Zetta (Hard box).
+</p>
+
+<iframe src="/abnd4/zetta.pdf" width="100%" height="100%"></iframe>

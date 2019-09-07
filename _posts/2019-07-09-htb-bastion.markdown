@@ -1,6 +1,6 @@
 ---
 title: "HackTheBox Bastion - Writeup"
-description: A Safe on HackTheBox Bastion (Easy box).
+description: A writeup on HackTheBox Bastion (Easy box).
 date:   2019-09-07 17:00:00 +0100
 layout: pdf
 ---

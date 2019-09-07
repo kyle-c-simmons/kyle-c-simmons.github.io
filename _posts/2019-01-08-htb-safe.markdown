@@ -1,6 +1,6 @@
 ---
 title: "HackTheBox Safe - Writeup"
-description: A Safe on HackTheBox Writeup (Easy box).
+description: A writeup on HackTheBox Safe (Easy box).
 date:   2019-08-01 22:58:00 +0100
 layout: pdf
 ---
